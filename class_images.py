@@ -1,14 +1,15 @@
-##  Made by Gerardo Uranga ##
-##  guranga@miners.utep.edu ##
-##  Last Modified: 2/22/2017 ##
-##                           ##
-##  Small script to place images in folders of the user's choice. ##
-##  Runs from command line. To change, simply uncomment direc and output to ##
-##  suit your needs. ##
+##  Made by Gerardo Uranga 
+##  guranga@miners.utep.edu 
+##  Last Modified: 2/22/2017 
+##                           
+##  Small script to place images in folders of the user's choice. 
+##  Runs from command line. To change, simply uncomment direc and output to 
+##  suit your needs.                           
 
 import os, sys
 import shutil
 import cv2
+
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 # Import Variable Meanings:
 # direc = input directory
@@ -21,15 +22,6 @@ import cv2
 # j = used to iterate through image_direcs and in the while loop
 # new_direc = updated directory of the image after being moved. 
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-##  Last Modified: 2/21/2017 ##
-##                           ##
-##  Small script to place images in correct folders for competition. ##
-##  Runs from command line. To change, simply uncomment direc and output to ##
-##  suit your needs. ##
-import os, sys
-#from PIL import Image
-import shutil
-import cv2
 
 #direc = 'your\\directory\\here'
 direc = sys.argv[1]
