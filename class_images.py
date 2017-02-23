@@ -1,5 +1,6 @@
 ##  Made by Gerardo Uranga ##
 ##  guranga@miners.utep.edu ##
+<<<<<<< HEAD
 ##  Last Modified: 2/22/2017 ##
 ##                           ##
 ##  Small script to place images in folders of the user's choice. ##
@@ -21,10 +22,23 @@ import cv2
 # j = used to iterate through image_direcs and in the while loop
 # new_direc = updated directory of the image after being moved. 
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+=======
+##  Last Modified: 2/21/2017 ##
+##                           ##
+##  Small script to place images in correct folders for competition. ##
+##  Runs from command line. To change, simply uncomment direc and output to ##
+##  suit your needs. ##
+import os, sys
+#from PIL import Image
+import shutil
+import cv2
+
+>>>>>>> 0b96e6cb1eb5303f7092d35ea67ec35179849e56
 #direc = 'your\\directory\\here'
 direc = sys.argv[1]
 #output = 'your\\directory\\here'
 output = sys.argv[2]
+<<<<<<< HEAD
 trash = output+'\\'+"trash"
 if not (os.path.exists(trash)):
     os.makedirs(trash)
@@ -69,3 +83,22 @@ for folders in image_folder:
         j += 1
 os.rmdir(trash)
 
+=======
+image_folders = os.listdir(direc)
+file_names = []
+for i in range(0,len(sys.argv)-3):
+    file_names.append(sys.argv[i+3])
+
+for folders in image_folders:
+    for fil in os.listdir(direc + '\\' + folders):
+        InFileName = direc + '\\' + folders + '\\' + fil
+        image = cv2.imread(InFileName)
+        cv2.imshow("",image)
+        x = cv2.waitKey()
+        x = int(chr(x))-1
+        if not (os.path.exists(output + '\\' +file_names[x])):
+            os.makedirs(output+'\\'+file_names[x])
+            shutil.move(InFileName, output+ '\\' +file_names[x])
+        else:
+            shutil.move(InFileName, output+ '\\'+file_names[x])
+>>>>>>> 0b96e6cb1eb5303f7092d35ea67ec35179849e56
